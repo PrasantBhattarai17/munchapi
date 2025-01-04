@@ -1,0 +1,6 @@
+@MunchyAPI_HostAddress = http://localhost:5195
+
+GET {{MunchyAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
