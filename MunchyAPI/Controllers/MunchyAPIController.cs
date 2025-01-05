@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MunchyAPI.Data;
 using MunchyAPI.Models;
 
 namespace MunchyAPI.Controllers
@@ -9,13 +10,16 @@ namespace MunchyAPI.Controllers
     public class MunchyAPIController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<MunchDTO> getMunch()
+        public ActionResult<IEnumerable<MunchDTO>> getMunch()
         {
-            return new List<MunchDTO>
-            {
-                new MunchDTO{Id=1, Name="Itallic"},
-                new MunchDTO{Id=2, Name="Indian"}
-            };
+            return Ok(MunchStore.MunchList);
+
+        }
+
+        [HttpGet("{id:int} ")]
+        public ActionResult<MunchDTO> getMunchy(int id)
+        {
+            return Ok(MunchStore.MunchList.FirstOrDefault(u=>u.Id==id));
 
         }
     }
