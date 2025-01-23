@@ -17,7 +17,8 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<ILogging, Logging>(); //singleton creates a single object when the app starts and used for every request for the implementation
+//for custom logger
+//builder.Services.AddSingleton<ILogging, Logging>(); //singleton creates a single object when the app starts and used for every request for the implementation
 //For AddScoped the object is created for every request of the implementaion class and used in the required part
 //Similary for AddTransient object is  created for every access of the object another object is created and used for a single request
 //for example for a single request of the implementation class if the service object is accessed for 10 times then more 10 objects are created and furtherly used in the required part 
