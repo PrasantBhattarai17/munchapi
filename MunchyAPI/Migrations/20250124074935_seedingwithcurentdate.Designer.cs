@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MunchyAPI.Data;
 
@@ -11,9 +12,11 @@ using MunchyAPI.Data;
 namespace MunchyAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250124074935_seedingwithcurentdate")]
+    partial class seedingwithcurentdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,10 +65,10 @@ namespace MunchyAPI.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImgUrl = "https://images.unsplash.com/photo-1612195610857-d20a1a4c38fb",
+                            CreatedDate = new DateTime(2025, 1, 24, 13, 34, 35, 526, DateTimeKind.Local).AddTicks(8293),
+                            ImgUrl = "https://images.unsplash.com/photo-1555992336-03a23c424159",
                             Location = "Downtown",
-                            Name = "Truffle Risotto",
+                            Name = "The Gourmet Spot",
                             Price = 150,
                             Rating = 5,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -73,10 +76,10 @@ namespace MunchyAPI.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImgUrl = "https://images.unsplash.com/photo-1576659000105-f03f4533b30d",
+                            CreatedDate = new DateTime(2025, 1, 24, 13, 34, 35, 527, DateTimeKind.Local).AddTicks(4989),
+                            ImgUrl = "https://images.unsplash.com/photo-1528605248644-14dd04022da1",
                             Location = "City Center",
-                            Name = "Lobster Bisque",
+                            Name = "Bistro Bliss",
                             Price = 120,
                             Rating = 4,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -84,10 +87,10 @@ namespace MunchyAPI.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImgUrl = "https://images.unsplash.com/photo-1598939359644-c2c6f678ef45",
+                            CreatedDate = new DateTime(2025, 1, 24, 13, 34, 35, 527, DateTimeKind.Local).AddTicks(4996),
+                            ImgUrl = "https://images.unsplash.com/photo-1565299507177-b0ac66763828",
                             Location = "Uptown",
-                            Name = "Wagyu Beef Steak",
+                            Name = "Culinary Haven",
                             Price = 200,
                             Rating = 5,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -95,10 +98,10 @@ namespace MunchyAPI.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 1, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImgUrl = "https://images.unsplash.com/photo-1511381242551-df92d18062b0",
+                            CreatedDate = new DateTime(2025, 1, 24, 13, 34, 35, 527, DateTimeKind.Local).AddTicks(4997),
+                            ImgUrl = "https://images.unsplash.com/photo-1586190848861-99aa4a171e90",
                             Location = "Suburbs",
-                            Name = "Duck Confit",
+                            Name = "Savory Delight",
                             Price = 90,
                             Rating = 3,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -106,10 +109,10 @@ namespace MunchyAPI.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2025, 1, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImgUrl = "https://images.unsplash.com/photo-1565104283-5d78c063ac8a",
+                            CreatedDate = new DateTime(2025, 1, 24, 13, 34, 35, 527, DateTimeKind.Local).AddTicks(4999),
+                            ImgUrl = "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
                             Location = "Midtown",
-                            Name = "Sushi Platter",
+                            Name = "Urban Feast",
                             Price = 130,
                             Rating = 4,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
