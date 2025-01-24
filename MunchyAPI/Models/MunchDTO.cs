@@ -12,5 +12,10 @@ namespace MunchyAPI.Models
         public int Price { get; set; }
 
         public int Rating { get; set; }
+
+        public string Location { get; set; }
+
+        public string ImgUrl { get; set; }
+
     }
 }

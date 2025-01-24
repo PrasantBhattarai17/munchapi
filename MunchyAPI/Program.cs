@@ -1,6 +1,9 @@
 //using Serilog;
 
-using MunchyAPI.logging;
+//using MunchyAPI.logging;
+
+using Microsoft.EntityFrameworkCore;
+using MunchyAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,12 @@ var builder = WebApplication.CreateBuilder(args);
 //Serilog configuration i.e external logging library
 //Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File("logs/munchlogs.txt").CreateLogger();
 //builder.Host.UseSerilog();
+
+//For connecting the database and configuring the entity framework core for accessing the database directly without using any queries
+builder.Services.AddDbContext<ApplicationDBContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection")); //this connectionstring is also needed to be passed into dbcontext
+});
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

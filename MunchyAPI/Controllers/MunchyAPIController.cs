@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using MunchyAPI.Data;
-using MunchyAPI.logging;
+//using MunchyAPI.logging;
 using MunchyAPI.Models;
 
 namespace MunchyAPI.Controllers
@@ -21,17 +21,21 @@ namespace MunchyAPI.Controllers
 
 
         // For using the custom LOG method for logging 
-        private readonly ILogging _logger;
-        public MunchyAPIController(ILogging logger)
+        //private readonly ILogging _logger;
+        //public MunchyAPIController(ILogging logger)    {
+        //    _logger = logger; }
+
+
+        public MunchyAPIController()
         {
-            _logger = logger;
+            
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<MunchDTO>> getMunch()
         {
 
-            _logger.Log("Getting ready for the munch!!","");
+          //  _logger.Log("Getting ready for the munch!!","");
             return Ok(MunchStore.MunchList);
 
         }
@@ -44,7 +48,7 @@ namespace MunchyAPI.Controllers
         {
             if (id == 0)
             {
-                _logger.Log("Sorry the id is Invallid!! Id: " + id,"error");
+              //  _logger.Log("Sorry the id is Invallid!! Id: " + id,"error");
                 return BadRequest();
             }
 
